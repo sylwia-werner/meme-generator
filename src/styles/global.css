@@ -65,3 +65,7 @@ h4,
 p {
 	margin: 0;
 }
+
+.is-scroll-locked {
+	overflow: hidden;
+}

@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { Button } from "../Button/Button";
 import { FileInput } from "../Inputs/FileInput/FileInput";
 import "./MemeEditor.css";
+import Modal from "../Modal/Modal";
 
 export const MemeEditor = () => {
+	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<div className="meme-editor">
 			<div className="select-image-buttons">
@@ -11,11 +15,16 @@ export const MemeEditor = () => {
 				<Button
 					fullWidth
 					variant="secondary"
-					onClick={() => console.log("choose image from gallery")}
+					onClick={() => setIsOpen(true)}
 				>
 					Choose preset
 				</Button>
 			</div>
+			{isOpen && (
+				<Modal title="Choose preset" onClose={() => setIsOpen(false)}>
+					ELKO
+				</Modal>
+			)}
 			<div className="text-toolbar">
 				Content
 				{/* <Button

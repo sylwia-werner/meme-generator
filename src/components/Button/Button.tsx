@@ -18,7 +18,6 @@ export const Button = ({
 	type = "button",
 	disabled,
 	variant,
-	icon,
 	fullWidth = false,
 }: Props) => {
 	return (
