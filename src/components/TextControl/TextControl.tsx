@@ -13,6 +13,7 @@ export const TextControl = ({ id, value, updateText }: Props) => {
 	const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
 		updateText(id, { textContent: e.target.value });
 	};
+
 	return (
 		<div className="text-control-tile">
 			<textarea

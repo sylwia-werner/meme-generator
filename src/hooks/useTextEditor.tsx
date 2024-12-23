@@ -6,8 +6,8 @@ export const useTextEditor = () => {
 		{
 			id: "1",
 			color: "#000",
-			size: 20,
-			textContent: "HEHE",
+			size: 32,
+			textContent: "",
 			x: 0,
 			y: 0,
 		},
@@ -17,10 +17,10 @@ export const useTextEditor = () => {
 		const newText: TextItem = {
 			id: Date.now().toString(),
 			textContent: text || "",
-			size: 20,
+			size: 32,
 			color: "white",
-			x: 0,
-			y: 0,
+			x: 50,
+			y: 50,
 		};
 
 		setTexts(prevTexts => [...prevTexts, newText]);
@@ -29,13 +29,23 @@ export const useTextEditor = () => {
 	const updateText = (id: string, updatedProps: Partial<TextItem>) => {
 		setTexts(prevTexts =>
 			prevTexts.map(text =>
-				text.id === id ? { ...text, ...updatedProps } : text
+				text.id === id
+					? {
+							...text,
+							...updatedProps,
+							textContent: updatedProps.textContent || "",
+					  }
+					: text
 			)
 		);
 	};
 
 	const removeText = (id: string) => {
 		setTexts(prevTexts => prevTexts.filter(text => text.id !== id));
+	};
+
+	const removeTexts = () => {
+		setTexts([]);
 	};
 
 	const moveText = (id: string, x: number, y: number) => {
@@ -47,6 +57,7 @@ export const useTextEditor = () => {
 		addText,
 		updateText,
 		removeText,
+		removeTexts,
 		moveText,
 	};
 };
