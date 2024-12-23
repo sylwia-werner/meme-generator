@@ -9,7 +9,9 @@ export const MainLayout = ({ children }: Props) => {
 	return (
 		<>
 			<header className="header">
-				<h1>Meme Generator</h1>
+				<div className="container">
+					<h1 className="heading">Meme Generator</h1>
+				</div>
 			</header>
 			<main className="main">
 				<div className="container">{children}</div>
