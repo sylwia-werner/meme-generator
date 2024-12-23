@@ -2,14 +2,23 @@ import { useState } from "react";
 import { TextItem } from "../types/textItem";
 
 export const useTextEditor = () => {
-	const [texts, setTexts] = useState<TextItem[]>([]);
+	const [texts, setTexts] = useState<TextItem[]>([
+		{
+			id: "1",
+			color: "#000",
+			size: 20,
+			textContent: "HEHE",
+			x: 0,
+			y: 0,
+		},
+	]);
 
-	const addText = (text: string) => {
+	const addText = (text?: string) => {
 		const newText: TextItem = {
 			id: Date.now().toString(),
-			textContent: text,
+			textContent: text || "",
 			size: 20,
-			color: "black",
+			color: "white",
 			x: 0,
 			y: 0,
 		};

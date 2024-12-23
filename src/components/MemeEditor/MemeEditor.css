@@ -21,3 +21,10 @@
 	gap: 1.25rem;
 	margin-top: auto;
 }
+
+.text-tiles {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-top: 0.75rem;
+}

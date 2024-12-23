@@ -27,6 +27,10 @@
 	background-color: var(--color-primary);
 }
 
+.button.ghost {
+	background-color: inherit;
+}
+
 .button.secondary {
 	background-color: inherit;
 	border: 1px solid var(--color-primary);

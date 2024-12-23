@@ -55,13 +55,11 @@ export const Canvas = ({ image, texts }: Props) => {
 				context.clearRect(0, 0, canvas.width, canvas.height);
 				context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
-				if (texts.length) {
-					texts.forEach(text => {
-						context.font = `${text.size}px Arial`;
-						context.fillStyle = text.color;
-						context.fillText(text.textContent, text.x, text.y);
-					});
-				}
+				texts.forEach(text => {
+					context.font = `${text.size}px Arial`;
+					context.fillStyle = text.color;
+					context.fillText(text.textContent, text.x, text.y);
+				});
 			};
 
 			img.onerror = () => {

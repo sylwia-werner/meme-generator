@@ -1,0 +1,20 @@
+.text-control-tile {
+	display: flex;
+	align-items: center;
+	background-color: var(--color-secondary);
+	border-radius: var(--radius);
+}
+
+.edit-button-container {
+	margin-left: auto;
+}
+
+.text-control-textarea {
+	background-color: var(--color-bg);
+	color: var(--color-text-secondary);
+	border: 0;
+	border-bottom: 2px solid var(--color-text-secondary);
+
+	flex: 1;
+	resize: none;
+}
