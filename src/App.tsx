@@ -1,7 +1,12 @@
-import { MemeEditor } from "./pages/MemeEditor/MemeEditor";
+import { MemeProvider } from "./hooks/useMemeContext";
+import { MemeConnector } from "./pages/MemeConnector/MemeConnector";
 
 function App() {
-	return <MemeEditor />;
+	return (
+		<MemeProvider>
+			<MemeConnector />
+		</MemeProvider>
+	);
 }
 
 export default App;

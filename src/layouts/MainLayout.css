@@ -11,8 +11,15 @@
 .main {
 	margin-top: 4rem;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	justify-content: center;
+	padding: 0 1rem;
+	flex: 1 1 auto;
+}
+
+@media screen and (max-width: 768px) {
+	.main {
+		margin-top: 1.25rem;
+	}
 }
 
 .container {
@@ -26,4 +33,11 @@
 	color: white;
 	border-radius: var(--radius);
 	background: var(--color-bg-gradient);
+	min-height: 30rem;
+}
+
+@media screen and (max-width: 768px) {
+	.main .container {
+		max-height: none;
+	}
 }

@@ -1,0 +1,18 @@
+.meme-gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+	gap: 16px;
+}
+
+.meme-gallery-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-secondary);
+	cursor: pointer;
+}
+
+.meme-gallery-item-img {
+	width: 100%;
+	height: auto;
+}
