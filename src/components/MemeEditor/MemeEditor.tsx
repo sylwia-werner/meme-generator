@@ -4,16 +4,25 @@ import { FileInput } from "../Inputs/FileInput/FileInput";
 import "./MemeEditor.css";
 import Modal from "../Modal/Modal";
 import { MemePresets } from "../MemePresets/MemePresets";
-import { useMemeContext } from "../../hooks/useMemeContext";
+import { useMemeContext } from "../../context/useMemeContext";
+import { TextControl } from "../TextControl/TextControl";
+import { useTextEditor } from "../../hooks/useTextEditor";
 
 export const MemeEditor = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [memes, setMemes] = useState<string[]>([]);
-	const { setImage } = useMemeContext();
+	const { texts, addText, updateText, removeTexts } = useTextEditor();
+	const { image, setImage } = useMemeContext();
+	const isImageSelected = !!image;
 
 	const handleMemeSelect = (image: string) => {
 		setImage(image);
 		setIsOpen(false);
+	};
+
+	const reset = () => {
+		setImage(null);
+		removeTexts();
 	};
 
 	useEffect(() => {
@@ -47,23 +56,33 @@ export const MemeEditor = () => {
 						Choose preset
 					</Button>
 				</div>
-
-				<div className="text-toolbar">Content</div>
-
+				{isImageSelected && (
+					<div className="text-toolbar">
+						<Button variant="ghost" onClick={() => addText()}>
+							Add Text
+						</Button>
+						<div className="text-tiles">
+							{texts.map(text => (
+								<TextControl
+									key={text.id}
+									id={text.id}
+									value={text.textContent.toString()}
+									updateText={updateText}
+								/>
+							))}
+						</div>
+					</div>
+				)}
 				<div className="action-buttons">
+					<Button fullWidth variant="secondary" onClick={reset}>
+						Reset
+					</Button>
 					<Button
 						fullWidth
 						variant="primary"
 						onClick={() => console.log("download")}
 					>
 						Download
-					</Button>
-					<Button
-						fullWidth
-						variant="secondary"
-						onClick={() => console.log("reset")}
-					>
-						Reset
 					</Button>
 				</div>
 			</div>

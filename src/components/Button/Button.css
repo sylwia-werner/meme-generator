@@ -27,7 +27,19 @@
 	background-color: var(--color-primary);
 }
 
+.button.ghost {
+	background-color: inherit;
+}
+
+.button.ghost:hover {
+	background-color: var(--color-secondary);
+}
+
 .button.secondary {
 	background-color: inherit;
-	border: 1px solid var(--color-primary);
+	border: 1px solid var(--color-text-secondary);
+}
+
+.button.secondary:hover {
+	background-color: var(--color-secondary);
 }

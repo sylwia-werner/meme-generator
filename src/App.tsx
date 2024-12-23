@@ -1,10 +1,13 @@
-import { MemeProvider } from "./hooks/useMemeContext";
+import { MemeProvider } from "./context/useMemeContext";
+import { TextEditorProvider } from "./context/useTextEditorContext";
 import { MemeConnector } from "./pages/MemeConnector/MemeConnector";
 
 function App() {
 	return (
 		<MemeProvider>
-			<MemeConnector />
+			<TextEditorProvider>
+				<MemeConnector />
+			</TextEditorProvider>
 		</MemeProvider>
 	);
 }

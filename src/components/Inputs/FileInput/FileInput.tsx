@@ -1,6 +1,6 @@
 import { ChangeEvent } from "react";
 import "./FileInput.css";
-import { useMemeContext } from "../../../hooks/useMemeContext";
+import { useMemeContext } from "../../../context/useMemeContext";
 
 export const FileInput = () => {
 	const { setImage } = useMemeContext();

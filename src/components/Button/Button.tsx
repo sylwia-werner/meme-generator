@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import "./Button.css";
 
-export type ButtonVariant = "primary" | "secondary";
+export type ButtonVariant = "primary" | "secondary" | "ghost";
 
 interface Props {
 	children: ReactNode;
@@ -17,7 +17,7 @@ export const Button = ({
 	onClick,
 	type = "button",
 	disabled,
-	variant,
+	variant = "secondary",
 	fullWidth = false,
 }: Props) => {
 	return (
