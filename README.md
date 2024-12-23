@@ -1,4 +1,4 @@
-# Meme Generator 🎉
+# Meme Generator 
 
 Meme Generator is a web application built with React + Vite. By now allows a user to choose a meme from PC or predefined presets and lets them create multiple texts on it, also to reset the state of texts and selected image.
 
