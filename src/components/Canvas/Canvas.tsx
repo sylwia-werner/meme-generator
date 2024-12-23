@@ -1,9 +1,12 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useMemeContext } from "../../hooks/useMemeContext";
 import "./Canvas.css";
+import { TextItem } from "../../types/textItem";
 
-export const Canvas = () => {
-	const { image } = useMemeContext();
+interface Props {
+	image: string;
+	texts: TextItem[];
+}
+export const Canvas = ({ image, texts }: Props) => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const [containerSize, setContainerSize] = useState<{
 		width: number;
@@ -51,13 +54,21 @@ export const Canvas = () => {
 
 				context.clearRect(0, 0, canvas.width, canvas.height);
 				context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+				if (texts.length) {
+					texts.forEach(text => {
+						context.font = `${text.size}px Arial`;
+						context.fillStyle = text.color;
+						context.fillText(text.textContent, text.x, text.y);
+					});
+				}
 			};
 
 			img.onerror = () => {
 				console.error("Failed to load image");
 			};
 		}
-	}, [image, containerSize]);
+	}, [image, containerSize, texts]);
 
 	return (
 		<div className="canvas-container">

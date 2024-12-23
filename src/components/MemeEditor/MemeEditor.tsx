@@ -5,10 +5,12 @@ import "./MemeEditor.css";
 import Modal from "../Modal/Modal";
 import { MemePresets } from "../MemePresets/MemePresets";
 import { useMemeContext } from "../../hooks/useMemeContext";
+import { useTextEditor } from "../../hooks/useTextEditor";
 
 export const MemeEditor = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [memes, setMemes] = useState<string[]>([]);
+	const { texts, addText } = useTextEditor();
 	const { setImage } = useMemeContext();
 
 	const handleMemeSelect = (image: string) => {
@@ -48,7 +50,19 @@ export const MemeEditor = () => {
 					</Button>
 				</div>
 
-				<div className="text-toolbar">Content</div>
+				<div className="text-toolbar">
+					<Button variant="secondary" onClick={() => addText}>
+						Add Text
+					</Button>
+					<div className="text-tiles">
+						{texts.map(text => (
+							<div key={text.id} className="text-tile">
+								<span>{text.textContent}</span>
+								{/* Add buttons for text editing */}
+							</div>
+						))}
+					</div>
+				</div>
 
 				<div className="action-buttons">
 					<Button
