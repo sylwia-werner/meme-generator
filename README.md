@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# Meme Generator 🎉
+![image](https://github.com/user-attachments/assets/511fb461-e031-476f-8c46-57fb646f6f17)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Meme Generator is a web application built with React + Vite. By now allows a user to choose a meme from PC or predefined presets and lets them create multiple texts on it.
 
-Currently, two official plugins are available:
+## Installation 🛠️
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I have used Vite to create this react project, Here's how you can use it after cloning the repo:
+1. Clone the repository:
+   ```shell
+   git clone [https://github.com/sylwia-werner/meme-generator.git]
+2. Navigate to the project directory:
+	```shell
+	cd meme-generator
+3. Install the dependencies:
+	```shell
+	npm install
+4. Start the development server:
+	```shell
+	npm run dev
+The application will be accessible at [http://localhost:5173](http://localhost:5173/).
 
-## Expanding the ESLint configuration
+## Demo🌐
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Live demo: [[live demo](https://memefy-shivam171.netlify.app/).](https://endearing-gelato-4a0534.netlify.app)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
