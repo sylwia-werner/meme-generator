@@ -30,7 +30,7 @@
 }
 
 .main .container {
-	color: white;
+	color: var(--color-text-primary);
 	border-radius: var(--radius);
 	background: var(--color-bg-gradient);
 	min-height: 30rem;

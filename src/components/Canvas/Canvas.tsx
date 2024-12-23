@@ -8,6 +8,7 @@ interface Props {
 }
 export const Canvas = ({ image, texts }: Props) => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
 	const [containerSize, setContainerSize] = useState<{
 		width: number;
 		height: number;
