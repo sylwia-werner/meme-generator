@@ -88,6 +88,7 @@ export const MemeEditor = () => {
 			</div>
 			{isOpen && (
 				<Modal title="Choose preset" onClose={() => setIsOpen(false)}>
+					{/* TODO: Load presets when needed */}
 					<MemePresets
 						memes={memes}
 						onMemeSelect={handleMemeSelect}
