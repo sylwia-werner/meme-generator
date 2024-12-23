@@ -12,7 +12,7 @@ export const FileInput = () => {
 	};
 
 	return (
-		<label className="upload-button">
+		<label className="upload-button" tabIndex={0}>
 			<input type="file" onChange={handleChange} />
 			Upload
 		</label>

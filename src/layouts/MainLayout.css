@@ -33,7 +33,7 @@
 	color: white;
 	border-radius: var(--radius);
 	background: var(--color-bg-gradient);
-	max-height: 30rem;
+	min-height: 30rem;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,13 +1,5 @@
 import { createContext, useContext, useState } from "react";
-
-const DEFAULT_MEME_SRC = "/public/memes/meme-1.jpg";
-// interface MemeContextType {
-// 	image: string | null;
-// 	// texts: TextStyle[];
-// 	setImage: (image: string | null) => void;
-// 	// addText: (text: TextStyle) => void;
-// 	reset: () => void;
-// }
+import DEFAULT_MEME_SRC from "../assets/memes/meme-1.jpg";
 
 interface MemeContextType {
 	image: string | null;
