@@ -6,12 +6,12 @@ import Modal from "../Modal/Modal";
 import { MemePresets } from "../MemePresets/MemePresets";
 import { useMemeContext } from "../../context/useMemeContext";
 import { TextControl } from "../TextControl/TextControl";
-import { useTextEditor } from "../../hooks/useTextEditor";
+import { useTextEditorContext } from "../../context/useTextEditorContext";
 
 export const MemeEditor = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [memes, setMemes] = useState<string[]>([]);
-	const { texts, addText, updateText, removeTexts } = useTextEditor();
+	const { texts, addText, updateText, removeTexts } = useTextEditorContext();
 	const { image, setImage } = useMemeContext();
 	const isImageSelected = !!image;
 

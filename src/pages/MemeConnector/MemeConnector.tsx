@@ -1,19 +1,15 @@
-import { useEffect } from "react";
 import { Canvas } from "../../components/Canvas/Canvas";
 import { MemeEditor } from "../../components/MemeEditor/MemeEditor";
 import { useMemeContext } from "../../context/useMemeContext";
 import { MainLayout } from "../../layouts/MainLayout";
 import "./MemeConnector.css";
-import { useTextEditor } from "../../hooks/useTextEditor";
+import { useTextEditorContext } from "../../context/useTextEditorContext";
 
 export const MemeConnector = () => {
 	const { image } = useMemeContext();
-	const { texts } = useTextEditor();
-	const isImageSelected = !!image;
 
-	useEffect(() => {
-		console.log(texts);
-	}, [texts]);
+	const { texts } = useTextEditorContext();
+	const isImageSelected = !!image;
 
 	return (
 		<MainLayout>
