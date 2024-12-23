@@ -1,0 +1,29 @@
+.row {
+	display: flex;
+
+	width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.row {
+		flex-direction: column;
+	}
+}
+
+.item {
+	width: 50%;
+}
+
+.item + .item {
+	margin-left: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+	.item {
+		width: 100%;
+	}
+
+	.item + .item {
+		margin: 1.25rem 0 0;
+	}
+}
